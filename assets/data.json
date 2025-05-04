@@ -1,0 +1,162 @@
+[
+    {
+        "id": 1,
+        "title": "AI Transforms Modern Healthcare",
+        "category": "Technology",
+        "author": "Dr. Anita Sharma",
+        "published_date": "2025-04-20",
+        "read_time": 4,
+        "tags": [
+            "AI",
+            "Healthcare",
+            "Innovation"
+        ],
+        "image_url": "https://images.unsplash.com/photo-1588776814546-c5d8f5bbf276",
+        "snippet": "Artificial Intelligence is making rapid progress in diagnosing diseases and assisting doctors.",
+        "content": "Artificial Intelligence is transforming the landscape of modern medicine. From faster diagnostics to AI-driven robotic surgeries, the industry is experiencing a major shift."
+    },
+    {
+        "id": 2,
+        "title": "Nepal Government Introduces Digital ID",
+        "category": "Politics",
+        "author": "Ramesh Thapa",
+        "published_date": "2025-03-28",
+        "read_time": 3,
+        "tags": [
+            "Nepal",
+            "Digital ID",
+            "Government"
+        ],
+        "image_url": "https://images.unsplash.com/photo-1590650046871-bc0f69e7b8d2",
+        "snippet": "The new National Digital ID will replace old paper systems across Nepal.",
+        "content": "In a bid to digitize public services, the Nepal Government has launched a new national digital ID system. Citizens can now verify and access documents online securely."
+    },
+    {
+        "id": 3,
+        "title": "10 Easy Yoga Poses for Beginners",
+        "category": "Health",
+        "author": "Sita Rai",
+        "published_date": "2025-04-10",
+        "read_time": 5,
+        "tags": [
+            "Yoga",
+            "Fitness",
+            "Wellness"
+        ],
+        "image_url": "https://images.unsplash.com/photo-1556817411-31ae72fa3ea0",
+        "snippet": "Start your health journey with these simple and effective yoga poses.",
+        "content": "Yoga offers physical and mental benefits. These 10 beginner-friendly poses help improve posture, flexibility, and reduce stress levels."
+    },
+    {
+        "id": 4,
+        "title": "Must-Visit Places in Pokhara",
+        "category": "Travel",
+        "author": "Kiran Adhikari",
+        "published_date": "2025-03-15",
+        "read_time": 6,
+        "tags": [
+            "Pokhara",
+            "Nepal",
+            "Tourism"
+        ],
+        "image_url": "https://images.unsplash.com/photo-1608137681510-4e5c647c5d60",
+        "snippet": "Discover the serene beauty and culture of Pokhara, Nepal's lake city.",
+        "content": "Pokhara is one of Nepal's top travel destinations. From the peace pagoda to boating on Phewa Lake, there's something for every traveler to enjoy."
+    },
+    {
+        "id": 5,
+        "title": "Inflation Rate Drops for Third Month",
+        "category": "Economy",
+        "author": "Manish Neupane",
+        "published_date": "2025-04-05",
+        "read_time": 3,
+        "tags": [
+            "Economy",
+            "Inflation",
+            "Finance"
+        ],
+        "image_url": "https://images.unsplash.com/photo-1581092916450-ec91c3d9bf48",
+        "snippet": "Consumer prices continue to fall after the central bank's intervention.",
+        "content": "Inflation rates have seen a consistent drop, marking a positive turn in the economy. Experts believe this may open the door to reduced interest rates."
+    },
+    {
+        "id": 6,
+        "title": "5 Best Mobile Apps for Productivity",
+        "category": "Technology",
+        "author": "Nirajan Poudel",
+        "published_date": "2025-04-22",
+        "read_time": 4,
+        "tags": [
+            "Productivity",
+            "Apps",
+            "Mobile"
+        ],
+        "image_url": "https://images.unsplash.com/photo-1580894908360-26db27e4bba1",
+        "snippet": "Boost your daily tasks with these top-rated productivity apps.",
+        "content": "Mobile apps like Notion, Trello, and Todoist are helping millions stay organized. These apps come with smart features that simplify project tracking and time management."
+    },
+    {
+        "id": 7,
+        "title": "Budget 2025 Focuses on Youth Employment",
+        "category": "Politics",
+        "author": "Pratiksha Regmi",
+        "published_date": "2025-04-01",
+        "read_time": 4,
+        "tags": [
+            "Budget",
+            "Youth",
+            "Nepal"
+        ],
+        "image_url": "https://images.unsplash.com/photo-1617181518500-3f9f5b7e162c",
+        "snippet": "The new budget introduces skill-based programs to reduce youth unemployment.",
+        "content": "Nepal's Budget 2025 includes several youth-focused initiatives such as entrepreneurship training and micro-loans for startups to address the growing unemployment rate."
+    },
+    {
+        "id": 8,
+        "title": "Top 7 Immune-Boosting Foods",
+        "category": "Health",
+        "author": "Dr. Binita Karki",
+        "published_date": "2025-04-14",
+        "read_time": 5,
+        "tags": [
+            "Health",
+            "Nutrition",
+            "Immunity"
+        ],
+        "image_url": "https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2",
+        "snippet": "Strengthen your body’s defense system with these nutritious foods.",
+        "content": "Including foods like citrus fruits, garlic, and turmeric in your diet can boost your immune system. Experts recommend natural foods over supplements when possible."
+    },
+    {
+        "id": 9,
+        "title": "Everest Base Camp Trek Guide",
+        "category": "Travel",
+        "author": "Deepak Maharjan",
+        "published_date": "2025-04-18",
+        "read_time": 6,
+        "tags": [
+            "Trekking",
+            "EBC",
+            "Nepal"
+        ],
+        "image_url": "https://images.unsplash.com/photo-1611605698335-d14b6f71c91f",
+        "snippet": "Plan your EBC trek with this detailed beginner-friendly guide.",
+        "content": "The Everest Base Camp trek is one of Nepal’s most iconic adventures. This guide covers routes, acclimatization tips, gear checklist, and best seasons to visit."
+    },
+    {
+        "id": 10,
+        "title": "Stock Market Sees Sudden Surge",
+        "category": "Economy",
+        "author": "Rajesh Bhattarai",
+        "published_date": "2025-04-27",
+        "read_time": 3,
+        "tags": [
+            "Stocks",
+            "Finance",
+            "Markets"
+        ],
+        "image_url": "https://images.unsplash.com/photo-1605902711622-cfb43c4437f9",
+        "snippet": "Market gains reflect positive investor sentiment and economic recovery.",
+        "content": "The stock market experienced an unexpected surge this week. Analysts credit government policy changes and rising consumer confidence as major factors."
+    }
+]

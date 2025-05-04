@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "title": "Tech Giants Invest in Green Data Centers",
+    "category": "Technology",
+    "image_url": "https://picsum.photos/seed/159419fb4d355b6843723d1f19f1a7ff/250/300",
+    "snippet": "Sustainable tech infrastructure is the new priority.",
+    "content": "Artificial Intelligence is transforming the landscape of modern medicine. From faster diagnostics to AI-driven robotic surgeries, the industry is experiencing a major shift."
+  },
+  {
+    "id": 2,
+    "title": "Election Commission Launches Voter Awareness Drive",
+    "category": "Politics",
+    "image_url": "https://picsum.photos/seed/9313ed8c53bdbb199d59dce0047855c5/250/300",
+    "snippet": "Efforts are being made to boost voter turnout this year.",
+    "content": "In a bid to digitize public services, the Nepal Government has launched a new national digital ID system. Citizens can now verify and access documents online securely."
+  },
+  {
+    "id": 3,
+    "title": "Mental Health Support Expands in Rural Areas",
+    "category": "Health",
+    "image_url": "https://picsum.photos/seed/52100ff338c187d50fc7bc7694e80a59/250/300",
+    "snippet": "Telehealth brings hope to underserved communities.",
+    "content": "Yoga offers physical and mental benefits. These 10 beginner-friendly poses help improve posture, flexibility, and reduce stress levels."
+  },
+  {
+    "id": 4,
+    "title": "Top Monsoon Travel Destinations in Nepal",
+    "category": "Travel",
+    "image_url": "https://picsum.photos/seed/ebfe14eb3e1ed4d4089c8729a8ff92c5/250/300",
+    "snippet": "Make the most of rainy season adventures.",
+    "content": "Pokhara is one of Nepal's top travel destinations. From the peace pagoda to boating on Phewa Lake, there's something for every traveler to enjoy."
+  },
+  {
+    "id": 5,
+    "title": "Remittance Inflows Hit New Record",
+    "category": "Economy",
+    "image_url": "https://picsum.photos/seed/9991e0a9e26e96e31f7d016bc3761a36/250/300",
+    "snippet": "Nepali workers abroad send home more money than ever.",
+    "content": "Inflation rates have seen a consistent drop, marking a positive turn in the economy. Experts believe this may open the door to reduced interest rates."
+  },
+  {
+    "id": 6,
+    "title": "The Rise of Quantum Computing",
+    "category": "Technology",
+    "image_url": "https://picsum.photos/seed/7f2a0b174881e127943ab761db1a9c10/250/300",
+    "snippet": "Quantum computers are pushing the limits of processing power.",
+    "content": "Artificial Intelligence is transforming the landscape of modern medicine. From faster diagnostics to AI-driven robotic surgeries, the industry is experiencing a major shift."
+  },
+  {
+    "id": 7,
+    "title": "Parliament Debates New Environmental Bill",
+    "category": "Politics",
+    "image_url": "https://picsum.photos/seed/72d5fd5fa3d034a87b0c729d6b9c2e6e/250/300",
+    "snippet": "A new law could shape Nepal's green future.",
+    "content": "In a bid to digitize public services, the Nepal Government has launched a new national digital ID system. Citizens can now verify and access documents online securely."
+  },
+  {
+    "id": 8,
+    "title": "How Plant-Based Diets Improve Immunity",
+    "category": "Health",
+    "image_url": "https://picsum.photos/seed/5a22633f055b11c640967e5a2f83a527/250/300",
+    "snippet": "New research shows benefits of plant-based eating.",
+    "content": "Yoga offers physical and mental benefits. These 10 beginner-friendly poses help improve posture, flexibility, and reduce stress levels."
+  },
+  {
+    "id": 9,
+    "title": "Explore the Hidden Trails of Mustang",
+    "category": "Travel",
+    "image_url": "https://picsum.photos/seed/91ed4d597b5745fca5f188cf489f9d34/250/300",
+    "snippet": "Discover the untouched beauty of Nepal's far west.",
+    "content": "Pokhara is one of Nepal's top travel destinations. From the peace pagoda to boating on Phewa Lake, there's something for every traveler to enjoy."
+  },
+  {
+    "id": 10,
+    "title": "Stock Market Sees Surprising Recovery",
+    "category": "Economy",
+    "image_url": "https://picsum.photos/seed/c2961ae5fcf50a2961171d4b6e462fc5/250/300",
+    "snippet": "Investors show renewed confidence in local markets.",
+    "content": "Inflation rates have seen a consistent drop, marking a positive turn in the economy. Experts believe this may open the door to reduced interest rates."
+  }
+]
