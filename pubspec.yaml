@@ -62,6 +62,7 @@ flutter:
   assets:
     - assets/articles.json
     - assets/data.json
+    - assets/image/cover.jpg
     #- images/a_dot_burr.jpeg
     #- images/a_dot_ham.jpeg
 
