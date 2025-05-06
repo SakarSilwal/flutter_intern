@@ -5,6 +5,8 @@ import '../services/article_service.dart';
 import '../models/articles_model.dart';
 import 'article_detail_page.dart';
 import '../services/bookmark_service.dart';
+import 'package:cached_network_image/cached_network_image.dart';
+
 
 class HomePage extends StatefulWidget {
   static const routeName = '/home';
@@ -182,11 +184,13 @@ class _HomePageState extends State<HomePage> {
                                 tag: article.id,
                                 child: ClipRRect(
                                   borderRadius: BorderRadius.circular(8),
-                                  child: Image.network(
-                                    article.image_url,
+                                  child: CachedNetworkImage(
+                                   imageUrl:  article.image_url,
                                     width: 80,
                                     height: 80,
                                     fit: BoxFit.cover,
+                                    placeholder: (context,url)=>CircularProgressIndicator(),
+                                    errorWidget: (context, url, error)=>Icon(Icons.image_not_supported,size:80,),
                                   ),
                                 ),
                               )

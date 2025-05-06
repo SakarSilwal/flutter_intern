@@ -3,6 +3,7 @@ import '../models/articles_model.dart';
 import '../services/article_service.dart';
 import '../services/bookmark_service.dart';
 import 'article_detail_page.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 
 class BookmarkPage extends StatefulWidget {
   static const routeName = '/bookmarks';
@@ -54,38 +55,54 @@ class _BookmarkPageState extends State<BookmarkPage> {
             .where((article) => _bookmarkedArticleIds.contains(article.id))
             .toList();
 
-    return Scaffold(appBar: AppBar(title: const Text('Bookmarked Articles')),
-    body:bookmarkedArticles.isEmpty 
-    ?const Center(child: Text('No bookmarks yet!'))
-    :ListView.builder(
-      itemCount: bookmarkedArticles.length,
-      itemBuilder: (context, index){
-        final article = bookmarkedArticles[index];
-    
-        return Card(
-          elevation: 6,
-          child: ListTile(
-            leading: Image.network(
-              article.image_url,
-              width: 60,
-              height:60,
-              fit:BoxFit.cover,
-            ),
-            title: Text(article.title),
-            subtitle: Text(article.snippet),
-              
-          trailing: IconButton(icon: const Icon(Icons.bookmark_remove,color:Colors.red),
-          onPressed: ()=> toggleBookmark(article.id),
-          ),
-            onTap: () {
-              Navigator.pushNamed(context, ArticleDetailPage.routeName,
-              arguments: article
-              );
-            },
-          ),
-        );
-      },
-    ),
+    return Scaffold(
+      appBar: AppBar(title: const Text('Bookmarked Articles')),
+      body:
+          bookmarkedArticles.isEmpty
+              ? const Center(child: Text('No bookmarks yet!'))
+              : ListView.builder(
+                itemCount: bookmarkedArticles.length,
+                itemBuilder: (context, index) {
+                  final article = bookmarkedArticles[index];
+
+                  return Card(
+                    elevation: 6,
+                    child: ListTile(
+                      leading: ClipRRect(
+                        borderRadius: BorderRadius.circular(8),
+                        child: CachedNetworkImage(
+                          imageUrl: article.image_url,
+                          width: 60,
+                          height: 60,
+                          fit: BoxFit.cover,
+                          placeholder:
+                              (context, url) => CircularProgressIndicator(),
+                          errorWidget:
+                              (context, url, error) => Icon(Icons.error),
+                        ),
+                      ),
+
+                      title: Text(article.title),
+                      subtitle: Text(article.snippet),
+
+                      trailing: IconButton(
+                        icon: const Icon(
+                          Icons.bookmark_remove,
+                          color: Colors.red,
+                        ),
+                        onPressed: () => toggleBookmark(article.id),
+                      ),
+                      onTap: () {
+                        Navigator.pushNamed(
+                          context,
+                          ArticleDetailPage.routeName,
+                          arguments: article,
+                        );
+                      },
+                    ),
+                  );
+                },
+              ),
     );
   }
 }
