@@ -30,6 +30,7 @@ class ArticleDetailPage extends StatelessWidget {
             const SizedBox(height: 16),
             Text(
               article.title,
+              //
               style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 12),

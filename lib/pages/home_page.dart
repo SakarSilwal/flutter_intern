@@ -1,10 +1,10 @@
 import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import '../services/article_service.dart';
 import '../models/articles_model.dart';
 import 'article_detail_page.dart';
+import '../services/bookmark_service.dart';
 
 class HomePage extends StatefulWidget {
   static const routeName = '/home';
@@ -16,11 +16,28 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   List<Article> _articles = [];
-
+  Set<int> _bookmarkedArticleIds = {};
+  final BookmarkService _bookmarkService = BookmarkService();
+  //
   @override
   void initState() {
     super.initState();
     loadArticles();
+    loadBookmarkedArticles();
+  }
+
+  //load bookmarked articles from sp
+  Future<void> loadBookmarkedArticles() async {
+    Set<int> bookmarkedArticles =
+        await _bookmarkService.loadBookmarkedArticles();
+    setState(() {
+      _bookmarkedArticleIds = bookmarkedArticles;
+    });
+  }
+
+  //save bookmarked arti to sp
+  Future<void> saveBookmarkedArticles() async {
+    await _bookmarkService.saveBookmarkedArticles(_bookmarkedArticleIds);
   }
 
   Future<void> loadArticles() async {
@@ -35,7 +52,17 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Articles')),
+      appBar: AppBar(
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.bookmarks),
+            onPressed: () {
+              Navigator.pushNamed(context, '/bookmarks');
+            },
+          ),
+        ],
+        title: Text('Articles'),
+      ),
       body:
           _articles.isEmpty
               ? Center(child: CircularProgressIndicator())
@@ -84,15 +111,67 @@ class _HomePageState extends State<HomePage> {
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Text(
-                                    article.title,
-                                    style: TextStyle(
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.black,
-                                    ),
-                                    overflow: TextOverflow.ellipsis,
-                                    maxLines: 1,
+                                  Row(
+                                    children: [
+                                      Expanded(
+                                        child: Text(
+                                          article.title,
+                                          style: TextStyle(
+                                            fontSize: 16,
+                                            fontWeight: FontWeight.bold,
+                                            color: Colors.black,
+                                          ),
+                                          overflow: TextOverflow.ellipsis,
+                                          maxLines: 1,
+                                        ),
+                                      ),
+                                      IconButton(
+                                        icon: Icon(
+                                          _bookmarkedArticleIds.contains(
+                                                article.id,
+                                              )
+                                              ? Icons.bookmark
+                                              : Icons.bookmark_border,
+                                          color:
+                                              _bookmarkedArticleIds.contains(
+                                                    article.id,
+                                                  )
+                                                  ? Colors.red
+                                                  : Colors.grey,
+                                        ),
+                                        onPressed: () async {
+                                          setState(() {
+                                            if (_bookmarkedArticleIds.contains(
+                                              article.id,
+                                            )) {
+                                              _bookmarkedArticleIds.remove(
+                                                article.id,
+                                              );
+                                            } else {
+                                              _bookmarkedArticleIds.add(
+                                                article.id,
+                                              );
+                                            }
+                                          });
+
+                                          await saveBookmarkedArticles();
+
+                                          ScaffoldMessenger.of(
+                                            context,
+                                          ).showSnackBar(
+                                            SnackBar(
+                                              content: Text(
+                                                _bookmarkedArticleIds.contains(
+                                                      article.id,
+                                                    )
+                                                    ? 'Article bookedmarked!'
+                                                    : 'Article removed from bookmarks!',
+                                              ),
+                                            ),
+                                          );
+                                        },
+                                      ),
+                                    ],
                                   ),
                                   SizedBox(height: 8),
                                   Text(
