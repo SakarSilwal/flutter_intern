@@ -18,7 +18,18 @@ class _HomePageState extends State<HomePage> {
   List<Article> _articles = [];
   Set<int> _bookmarkedArticleIds = {};
   final BookmarkService _bookmarkService = BookmarkService();
-  //
+
+  //categories for filtering.......
+  List<String> _categories = [
+    'All',
+    'Travel',
+    'Technology',
+    'Health',
+    'Politics',
+    'Economy',
+  ];
+  String _selectedCategory = 'All';
+
   @override
   void initState() {
     super.initState();
@@ -40,6 +51,7 @@ class _HomePageState extends State<HomePage> {
     await _bookmarkService.saveBookmarkedArticles(_bookmarkedArticleIds);
   }
 
+  //loading articles form json
   Future<void> loadArticles() async {
     var articleStorage = ArticleStorage();
     List<Article> articles = await articleStorage.loadJson();
@@ -51,8 +63,27 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    //to filter article by selected category
+    final filteredArticles =
+        _selectedCategory == 'All'
+            ? _articles
+            : _articles.where((a) => a.category == _selectedCategory).toList();
+
     return Scaffold(
       appBar: AppBar(
+        title: Text('Articles'),
+
+        //button to open drawer
+        leading: Builder(
+          builder:
+              (context) => IconButton(
+                icon: const Icon(Icons.filter_alt),
+                onPressed: () {
+                  Scaffold.of(context).openEndDrawer();
+                },
+              ),
+        ),
+
         actions: [
           IconButton(
             icon: const Icon(Icons.bookmarks),
@@ -61,15 +92,44 @@ class _HomePageState extends State<HomePage> {
             },
           ),
         ],
-        title: Text('Articles'),
       ),
+
+      endDrawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            const DrawerHeader(
+              decoration: BoxDecoration(color: Colors.blue),
+              child: Text(
+                'Choose Category',
+                style: TextStyle(color: Colors.white, fontSize: 20),
+              ),
+            ),
+
+            //showing each category..
+            ..._categories.map(
+              (category) => ListTile(
+                title: Text(category),
+                selected: _selectedCategory == category,
+                onTap: () {
+                  setState(() {
+                    _selectedCategory = category;
+                  });
+                  Navigator.pop(context);
+                },
+              ),
+            ),
+          ],
+        ),
+      ),
+
       body:
-          _articles.isEmpty
+          filteredArticles.isEmpty
               ? Center(child: CircularProgressIndicator())
               : ListView.builder(
-                itemCount: _articles.length,
+                itemCount: filteredArticles.length,
                 itemBuilder: (context, index) {
-                  final article = _articles[index];
+                  final article = filteredArticles[index];
                   return GestureDetector(
                     onTap: () {
                       Navigator.pushNamed(
