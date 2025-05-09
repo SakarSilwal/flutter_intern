@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import '../models/articles_model.dart';
+import 'package:cached_network_image/cached_network_image.dart';
+
 
 class ArticleDetailPage extends StatelessWidget {
   static const routeName = '/article-detail';
@@ -20,11 +22,15 @@ class ArticleDetailPage extends StatelessWidget {
               tag: article.id,
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(20),
-                child: Image.network(
-                  article.image_url,
+                child: (
+                 CachedNetworkImage(
+                  imageUrl: article.image_url,
                   width: double.infinity,
                   height: 250,
                   fit: BoxFit.cover,
+                  placeholder: (context,url)=>CircularProgressIndicator(),
+                  errorWidget: (context, url, error)=>Icon(Icons.image_not_supported,size:80,),
+                 )
                   )),
             ),
             const SizedBox(height: 16),

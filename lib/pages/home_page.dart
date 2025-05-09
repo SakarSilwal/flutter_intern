@@ -39,6 +39,11 @@ class _HomePageState extends State<HomePage> {
     loadBookmarkedArticles();
   }
 
+  //save bookmarked arti to sp
+  Future<void> saveBookmarkedArticles() async {
+    await _bookmarkService.saveBookmarkedArticles(_bookmarkedArticleIds);
+  }
+  
   //load bookmarked articles from sp
   Future<void> loadBookmarkedArticles() async {
     Set<int> bookmarkedArticles =
@@ -48,10 +53,6 @@ class _HomePageState extends State<HomePage> {
     });
   }
 
-  //save bookmarked arti to sp
-  Future<void> saveBookmarkedArticles() async {
-    await _bookmarkService.saveBookmarkedArticles(_bookmarkedArticleIds);
-  }
 
   //loading articles form json
   Future<void> loadArticles() async {
